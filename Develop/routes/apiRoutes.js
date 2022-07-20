@@ -1,7 +1,6 @@
 // modules
 const router = require('express').Router()
 const fs = require('fs')
-const { getEnabledCategories } = require('trace_events')
 const uuid = require('uuid')
 const db = require('../db/db.json')
 
