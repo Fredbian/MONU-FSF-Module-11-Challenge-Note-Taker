@@ -2,7 +2,8 @@
 const router = require('express').Router()
 const fs = require('fs')
 const uuid = require('uuid')
-const db = require('../db/db.json')
+const path = require('path')
+const db = path.join(__dirname, '../db/db.json')
 
 // function for reading notes
 const readNotes = () => {
@@ -21,13 +22,13 @@ const deleteNote = (notes) => {
 
 
 // set router for get (read)
-router.get('/notes', (req, res) => {
+router.get('/api/notes', (req, res) => {
     // read notes from db
     res.json(readNotes())
 })
 
 // set router for post (write)
-router.post('/notes', (req, res) => {
+router.post('/api/notes', (req, res) => {
     // get notes in db
     const currentNotes = readNotes()
     // new note
@@ -43,7 +44,7 @@ router.post('/notes', (req, res) => {
 })
 
 // set router for delete (rewrite)
-router.delete('/note/:id', (req, res) => {
+router.delete('/api/notes/:id', (req, res) => {
     // get all notes in db
     const currentNotes = readNotes()
     // get note id to be deleted
