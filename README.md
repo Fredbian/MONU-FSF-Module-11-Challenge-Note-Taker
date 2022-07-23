@@ -27,7 +27,10 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
-## Screnshots
+## Screenshots
+![Screenshot1](https://github.com/Fredbian/MONU-FSF-Module-11-Challenge-Note-Taker/blob/main/public/assets/images/monu-fsf-module-11-note-taker.herokuapp.com_.png)
+
+![Screenshot2](https://github.com/Fredbian/MONU-FSF-Module-11-Challenge-Note-Taker/blob/main/public/assets/images/monu-fsf-module-11-note-taker.herokuapp.com_notes.png)
 
 
 
