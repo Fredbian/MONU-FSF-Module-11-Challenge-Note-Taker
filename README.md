@@ -32,5 +32,5 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 
 ## URLs
-* Github: 
-* Deployed Link: 
+* Github: https://github.com/Fredbian/MONU-FSF-Module-11-Challenge-Note-Taker 
+* Deployed Link: https://monu-fsf-module-11-note-taker.herokuapp.com/notes
