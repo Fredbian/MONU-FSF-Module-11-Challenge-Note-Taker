@@ -7,33 +7,41 @@ const db = path.join(__dirname, '../db/db.json')
 
 // function for reading notes
 const readNotes = () => {
-    return JSON.parse(fs.readFile(db) || '[]')
+    fs.readFile(db, 'utf-8', (err, data) => {
+        console.log(err)
+    })
+    return JSON.parse(fs.readFileSync(db, 'utf-8') || '[]')
 }
 
 // function for creating new notes
 const writeNotes = (notes) => {
-    fs.writeFile(db, JSON.stringify(notes))
+    fs.writeFile(db, JSON.stringify(notes), 'utf-8', (err) => {
+        console.log(err)
+    })
 }
+
 
 // function for deleting notes
 const deleteNote = (notes) => {
-    fs.writeFile(db, JSON.stringify(notes))
+    fs.writeFile(db, JSON.stringify(notes), 'utf-8', (err) => {
+        console.log(err)
+    })
 }
 
 
 // set router for get (read)
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     // read notes from db
     res.json(readNotes())
 })
 
 // set router for post (write)
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     // get notes in db
     const currentNotes = readNotes()
     // new note
     let newNote = {
-        id: uuid(),
+        id: uuid.v4(),
         title: req.body.title,
         text: req.body.text
     }
@@ -44,7 +52,7 @@ router.post('/api/notes', (req, res) => {
 })
 
 // set router for delete (rewrite)
-router.delete('/api/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
     // get all notes in db
     const currentNotes = readNotes()
     // get note id to be deleted
