@@ -20,4 +20,4 @@ app.use('/api', apiRoutes)
 app.use('/', htmlRoutes)
 
 // set server port
-server.listen(port, () => console.log(`This app server is running at port${port}`))
+app.listen(port, () => console.log(`This app server is running at port${port}`))
