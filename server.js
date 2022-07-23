@@ -2,6 +2,7 @@
 const express = require('express')
 const apiRoutes = require('./routes/apiRoutes')
 const htmlRoutes = require('./routes/htmlRoutes')
+const port = process.env.PORT || 8888
 
 // create app
 const app = express()
@@ -18,5 +19,5 @@ app.use(express.static('public'))
 app.use('/api', apiRoutes)
 app.use('/', htmlRoutes)
 
-// set server port, port = 8888
-app.listen(8888, () => {console.log(`This app server is running at port 8888..`)})
+// set server port
+server.listen(port, () => console.log(`This app server is running at port${port}`))
